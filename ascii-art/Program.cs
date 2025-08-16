@@ -1,12 +1,20 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Net.Security;
 using System.Reflection.PortableExecutable;
+using System.Runtime.InteropServices.Marshalling;
 using System.Security.Cryptography.X509Certificates;
 
 class Program
     {
-    static void Main()
+    static void Main(string[] args)
     {
+        string str="";
+        for (int i = 0; i < args.Length; i++)
+        {
+            str += args[i]+" ";
+           
+        }
+        Console.WriteLine(str);
       
         string filepath = "C:\\Users\\user\\source\\repos\\ascii-art\\ascii-art\\standard.txt";
        
@@ -40,12 +48,12 @@ class Program
                     
 
             }
-            string dictionary = "Hello I Am Aidyn";
+            // string dictionary = "Hello I Am Aidyn";
             int l=asciiMap.First().Value.Length;
             
             for (i = 0; i < l; i++)
             {
-                foreach (char c in dictionary)
+                foreach (char c in str)
                 {
                     if (asciiMap.ContainsKey(c))
                     {
